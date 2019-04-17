@@ -7,11 +7,11 @@ const createRouter = function (collection) {
 
 //index
   router.get('/', (req, res) => {
-    res.send('hello world!');
-    // collection
-    //   .find()
-    //   .toArray()
-    //   .then((docs) => res.json(docs))
+    // res.send('hello world!');
+    collection
+      .find()
+      .toArray()
+      .then((docs) => res.json(docs))
   });
 
 //show

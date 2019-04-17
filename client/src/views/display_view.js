@@ -5,8 +5,9 @@ const BucketDisplayView = function(container) {
 }
 
 BucketDisplayView.prototype.bindEvents = function () {
-  PubSub.subscribe('FormView:New-item', (event) => {
+  PubSub.subscribe('BucketList:dataloaded', (event) => {
     this.clearInput();
+    console.dir(event)
     this.render(event.detail);
   })
 };
@@ -16,9 +17,15 @@ BucketDisplayView.prototype.clearInput = function () {
 };
 
 BucketDisplayView.prototype.render = function (listItem) {
-  const bucketListItem = document.createElement('li');
-  bucketListItem.textContent = listItem.bucketlist
-  this.container.appendChild(bucketListItem);
+  for (item of listItem){
+    const bucketListItem = document.createElement('li');
+    bucketListItem.textContent = item.bucketlist
+    this.container.appendChild(bucketListItem);
+  }
+  // const bucketListItem = document.createElement('li');
+  // console.dir(listItem);
+  // bucketListItem.textContent = listItem
+  // this.container.appendChild(bucketListItem);
 };
 
 module.exports = BucketDisplayView;
