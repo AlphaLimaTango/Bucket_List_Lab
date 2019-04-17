@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Bucket List</title>
-    <script type="text/javascript" src="js/bundle.js">
-    </script>
-  </head>
-  <header>
-    <h1> Bucket List </h1>
-  </header>
-  <body>
-    <form id="input-form">
-      </form>
-      <input type="text" id="input"/>
-      <input type="submit" value="add" id="save"/>
-    <ul id="bucket-list-items">
-      </ul>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Bucket List</title>
+  <script type="text/javascript" src="js/bundle.js">
+  </script>
+</head>
+<header>
+  <h1> Bucket List </h1>
+</header>
+<body>
+  <form id="input-form">
+    <input type="text" id="bucketlist"/>
+    <input type="hidden" value="false" id="status"/>
+    <input type="submit" value="add" id="save"/>
+  </form>
+  <ul id="bucket-list-items">
+  </ul>
+</body>
 </html>
